@@ -30,22 +30,22 @@ public class Loan {
     private LocalDate paidDate;
 
     public Loan (String borrowerId, double loanAmount, LocalDate loanDate, LocalDate repaymentDate, String paymentStatus, LocalDate paidDate){
-                this.borrower_id = borrower_id;
-                this.loanAmount = loanAmount;
-                this.loanDate = loanDate;
-                this.repaymentDate = repaymentDate;
-                this.paymentStatus = paymentStatus;
-                this.paidDate = paidDate;
+        this.borrowerId = borrowerId;
+        this.loanAmount = loanAmount;
+        this.loanDate = loanDate;
+        this.repaymentDate = repaymentDate;
+        this.paymentStatus = paymentStatus;
+        this.paidDate = paidDate;
     }
 
     public Loan (){
         
     }
 
-    public Long getid(){
+    public Long getId(){
         return id;
     }
-    public void setId(){
+    public void setId(Long id){
         this.id=id;
     }
 
@@ -53,14 +53,14 @@ public class Loan {
         return borrowerId;
     }
 
-    public void setBorrowerId(){
+    public void setBorrowerId(String borrowerId){
         this.borrowerId = borrowerId;
     }
-    public double getloanAmount(){
+    public double getLoanAmount(){
         return loanAmount;
     }
 
-    public void setLoanAmount(){
+    public void setLoanAmount(double loanAmount){
         this.loanAmount = loanAmount;
     }
 
@@ -68,7 +68,7 @@ public class Loan {
         return loanDate;
     }
 
-    public void setLoanAmount(){
+    public void setLoanDate(LocalDate loanDate){
         this.loanDate = loanDate;
     }
 
@@ -76,7 +76,7 @@ public class Loan {
         return repaymentDate;
     }
 
-    public void setRepaymentDate(){
+    public void setRepaymentDate(LocalDate repaymentDate){
         this.repaymentDate = repaymentDate;
     }
 
@@ -84,7 +84,7 @@ public class Loan {
         return paymentStatus;
     } 
 
-    public void setPaymentstatus(){
+    public void setPaymentStatus(String paymentStatus){
         this.paymentStatus = paymentStatus;
     }
 
@@ -92,8 +92,7 @@ public class Loan {
         return paidDate;
     }
 
-    public LocalDate setPaidDate(){
+    public void setPaidDate(LocalDate paidDate){
         this.paidDate = paidDate;
     }
 }
-

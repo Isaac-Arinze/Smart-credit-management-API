@@ -7,15 +7,15 @@ public class LoanApplicationRequest {
     public String getBorrowerId(){
         return borrowerId;
     }
-    public void setBorrowerId(){
+    public void setBorrowerId(String borrowerId){
         this.borrowerId = borrowerId;
     }
 
     public double getLoanAmount(){
-        return borrowerId;
+        return loanAmount;
     }
 
-    public double setLoanAmount(){
+    public void setLoanAmount(double loanAmount){
         this.loanAmount = loanAmount;
     }
 
@@ -26,8 +26,4 @@ public class LoanApplicationRequest {
     public LoanApplicationRequest(){
         
     }
-
-
 }
-
-

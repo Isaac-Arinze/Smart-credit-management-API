@@ -18,33 +18,38 @@ public class CreditLimit {
     @Column(name = "used_amount")
     private double usedAmount;
 
-    @Column
+    @Column(name = "remaining_amount")
     private double remainingAmount;
 
     public String getBorrowerId(){
         return borrowerId;
     }
 
-    public void setBorrowerId(){
-        this.borrowerId;
+    public void setBorrowerId(String borrowerId){
+        this.borrowerId = borrowerId;
     }
 
     public double getCreditLimit(){
         return creditLimit;
     }
+
+    public void setCreditLimit(double creditLimit){
+        this.creditLimit = creditLimit;
+    }
+
     public double getUsedAmount(){
         return usedAmount;
     }
 
-    public void setUsedAmount(){
+    public void setUsedAmount(double usedAmount){
         this.usedAmount = usedAmount;
     }
 
     public double getRemainingAmount(){
-        return remainingAmount;
+        return creditLimit - usedAmount;
     }
 
-    public void setremainingAmount(){
+    public void setRemainingAmount(double remainingAmount){
         this.remainingAmount = remainingAmount;
     }
 }

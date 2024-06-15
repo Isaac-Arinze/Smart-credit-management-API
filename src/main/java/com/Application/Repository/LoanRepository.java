@@ -13,8 +13,5 @@ import com.Application.entity.Loan;
 public interface LoanRepository extends JpaRepository<Loan, Long> {
 
    List <Loan> findByBorrowerIdAndPaymentStatus(String borrowerId, String paymentStatus);
-
-	
-    // You can add custom query methods if needed
 	
 }

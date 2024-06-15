@@ -12,5 +12,6 @@ public interface CreditLimitRepository extends JpaRepository<CreditLimit, Long> 
 
 	Optional<CreditLimit> findByBorrowerId(String borrowerId);
     // You can add custom query methods if needed
+    
 }
 
