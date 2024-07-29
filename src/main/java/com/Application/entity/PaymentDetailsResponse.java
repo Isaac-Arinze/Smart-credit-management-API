@@ -1,5 +1,8 @@
 package com.Application.entity;
 
+import lombok.*;
+
+@Data
 public class PaymentDetailsResponse {
     private boolean success;
     private String message;
