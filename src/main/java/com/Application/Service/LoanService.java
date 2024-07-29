@@ -21,18 +21,17 @@ public class LoanService {
     private CreditLimitRepository creditLimitRepository;
 
     public Loan applyLoan(String borrowerId, double loanAmount) throws Exception{
-        if (borrowerId == null || borrowerId.isEmpty() || loanAmount <=0){
+        if (borrowerId == null || borrowerId.isEmpty() || loanAmount <= 0){
             throw new IllegalArgumentException("Invalid loan application request");
-
         }
-        CreditLimit creditlimit = creditLimitRepository.findByBorrowerId(borrowerId).orElseGet(
-            () -> {
-                CreditLimit newCreditLimit = new CreditLimit();
-                newCreditLimit.setBorrowerId(borrowerId);
-                newCreditLimit.setCreditLimit(5000.0);
-                newCreditLimit.setUsedAmount(0.0);
-                return newCreditLimit;
-            });
+
+        Optional<CreditLimit> creditLimitOptional = creditLimitRepository.findByBorrowerId(borrowerId);
+
+        if (creditLimitOptional.isEmpty()){
+            throw new Exception("Credit Limit information not found for borrower");
+        }
+
+        CreditLimit creditlimit = creditLimitOptional.get();
         double remainingCreditLimit = creditlimit.getCreditLimit() - creditlimit.getUsedAmount();
         List<Loan> existingLoan = loanRepository.findByBorrowerIdAndPaymentStatus(borrowerId, "Not paid");
 
